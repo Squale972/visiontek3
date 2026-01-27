@@ -17,10 +17,10 @@ const Hero = () => {
           <div className="animate-bounce">
             <Brain className="w-8 h-8 text-purple-400 opacity-80" />
           </div>
-          <div className="animate-bounce delay-100">
+          <div className="animate-bounce" style={{ animationDelay: '100ms' }}>
             <Zap className="w-8 h-8 text-blue-400 opacity-80" />
           </div>
-          <div className="animate-bounce delay-200">
+          <div className="animate-bounce" style={{ animationDelay: '200ms' }}>
             <Globe className="w-8 h-8 text-indigo-400 opacity-80" />
           </div>
         </div>
