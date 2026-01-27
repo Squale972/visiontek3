@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createClient } from '@supabase/supabase-js';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 
 const Contact = () => {
@@ -7,10 +8,13 @@ const Contact = () => {
     email: '',
     company: '',
     service: '',
-    message: ''
+    message: '',
+    consent_rgpd: false
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+
 
   const handleChange = (e) => {
     setFormData({
@@ -24,31 +28,52 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Netlify Forms submission
-      const formData = new FormData(e.target);
-      
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString(),
-      });
-
-      if (response.ok) {
-        setIsSubmitted(true);
-        setFormData({
-          name: '',
-          email: '',
-          company: '',
-          service: '',
-          message: ''
-        });
-        setTimeout(() => setIsSubmitted(false), 5000);
-      } else {
-        throw new Error('Erreur lors de la soumission');
+      // Validation frontend
+      if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+        throw new Error('Veuillez remplir tous les champs obligatoires');
       }
+      
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+        throw new Error('Veuillez entrer une adresse email valide');
+      }
+      
+      // Connexion Supabase et insertion
+      const submissionData = {
+        name: formData.name,
+        email: formData.email,
+        subject: `Demande ${formData.service || 'générale'}${formData.company ? ' - ' + formData.company : ''}`,
+        message: formData.message
+      };
+
+      const { createClient } = await import('@supabase/supabase-js');
+      const supabase = createClient(
+        import.meta.env.VITE_SUPABASE_URL,
+        import.meta.env.VITE_SUPABASE_ANON_KEY
+      );
+      
+      const { data, error } = await supabase
+        .from('contacts')
+        .insert([submissionData])
+        .select();
+      
+      if (error) {
+        throw error;
+      }
+      
+      setIsSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        service: '',
+        message: '',
+        consent_rgpd: false
+      });
+      setTimeout(() => setIsSubmitted(false), 5000);
+      
     } catch (error) {
-      console.error('Form submission error:', error);
-      alert('Erreur lors de l\'envoi du message. Veuillez réessayer.');
+      console.error('Erreur formulaire:', error);
+      alert(`Erreur: ${error.message}`);
     } finally {
       setIsSubmitting(false);
     }
@@ -78,15 +103,9 @@ const Contact = () => {
               </div>
             ) : (
               <form 
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
                 onSubmit={handleSubmit} 
                 className="space-y-6"
               >
-                <input type="hidden" name="form-name" value="contact" />
-                <input type="hidden" name="bot-field" />
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -163,6 +182,23 @@ const Contact = () => {
                     className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all resize-none"
                     placeholder="Décrivez votre projet..."
                   ></textarea>
+                </div>
+
+                {/* Consentement RGPD */}
+                <div>
+                  <label className="flex items-start space-x-2 text-gray-300 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      name="consent_rgpd"
+                      checked={formData.consent_rgpd}
+                      onChange={(e) => setFormData({...formData, consent_rgpd: e.target.checked})}
+                      className="mt-1 w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500"
+                      required
+                    />
+                    <span className="text-sm">
+                      J'accepte que mes données soient traitées conformément à la politique de confidentialité*
+                    </span>
+                  </label>
                 </div>
 
                 <button
