@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="VisionTek - Transformez votre activité avec l'Intelligence Artificielle. Formation, Conseil et Création Web." />
+    
+    <!-- Google Fonts - Charte Graphique -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600&display=swap" rel="stylesheet">
+    
+    <title>VisionTek - Intelligence Artificielle & Formation</title>
+    <script type="module" crossorigin src="/assets/index-0b58c50a.js"></script>
+    <link rel="stylesheet" href="/assets/index-1638f7f5.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    
+  </body>
+</html>
