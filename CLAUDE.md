@@ -57,3 +57,49 @@ src/
 - [ ] Lancer `npm run build` pour vérifier le build de production
 - [ ] Déployer sur Netlify si nécessaire
 - [ ] Ajouter logo réel dans public/ (remplacer placeholder)
+
+## 🚀 Phase 2 : Intégration Netlify
+
+### Prérequis
+- Compte Netlify créé
+- Repository GitHub connecté
+- Build de production validé
+
+### Étapes de Déploiement
+1. **Configuration Build**
+   - Vérifier `package.json` contient `"build": "vite build"`
+   - Créer `netlify.toml` à la racine
+   - Configurer dossier de publication : `dist`
+
+2. **Fichier netlify.toml**
+   ```toml
+   [build]
+     publish = "dist"
+     command = "npm run build"
+   
+   [[redirects]]
+     from = "/*"
+     to = "/index.html"
+     status = 200
+   ```
+
+3. **Déploiement Initial**
+   - Connecter repo GitHub à Netlify
+   - Lancer premier build automatique
+   - Vérifier URL de staging
+
+4. **Configuration DNS**
+   - Ajouter domaine personnalisé si requis
+   - Configurer enregistrements DNS
+   - Activer HTTPS automatique
+
+5. **Optimisations**
+   - Activer compression Brotli
+   - Configurer cache headers
+   - Activer Netlify Forms pour contact
+
+### Validation Post-Déploiement
+- [ ] Site accessible en HTTPS
+- [ ] Navigation SPA fonctionnelle
+- [ ] Formulaire contact opérationnel
+- [ ] Performance Core Web Vitals > 90
