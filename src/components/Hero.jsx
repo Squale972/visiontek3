@@ -12,30 +12,30 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Floating Icons */}
-        <div className="flex justify-center space-x-8 mb-8">
-          <div className="animate-bounce">
-            <Brain className="w-8 h-8 text-purple-400 opacity-80" />
+        {/* Floating Icons - Réduits pour focaliser sur le message */}
+        <div className="flex justify-center space-x-6 mb-6 opacity-70">
+          <div className="animate-bounce hover:scale-110 transition-transform cursor-default">
+            <Brain className="w-6 h-6 text-purple-400" />
           </div>
-          <div className="animate-bounce" style={{ animationDelay: '100ms' }}>
-            <Zap className="w-8 h-8 text-blue-400 opacity-80" />
+          <div className="animate-bounce hover:scale-110 transition-transform cursor-default" style={{ animationDelay: '100ms' }}>
+            <Zap className="w-6 h-6 text-blue-400" />
           </div>
-          <div className="animate-bounce" style={{ animationDelay: '200ms' }}>
-            <Globe className="w-8 h-8 text-indigo-400 opacity-80" />
+          <div className="animate-bounce hover:scale-110 transition-transform cursor-default" style={{ animationDelay: '200ms' }}>
+            <Globe className="w-6 h-6 text-indigo-400" />
           </div>
         </div>
 
-        {/* Main Heading */}
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+        {/* Main Heading - Typographie audacieuse */}
+        <h1 className="text-6xl md:text-8xl font-black text-white mb-8 leading-tight">
+          <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
             L'Intelligence Artificielle
           </span>
           <br />
-          <span className="text-white">au service de votre croissance</span>
+          <span className="text-white font-extrabold tracking-tight">au service de votre croissance</span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+        {/* Subtitle - Meilleur contraste et espacement amélioré */}
+        <p className="text-xl md:text-2xl text-gray-200 mb-24 max-w-3xl mx-auto leading-relaxed font-medium">
           Transformez vos ambitions en réalité avec des solutions IA sur mesure, 
           des formations expertes et une accompagnement personnalisé.
         </p>
@@ -58,19 +58,19 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">95%</div>
-            <div className="text-gray-400">Satisfaction client</div>
+        {/* Stats Section - Plus audacieuses */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-28 mb-20">
+          <div className="group text-center p-6 rounded-xl hover:bg-white/5 transition-all cursor-default">
+            <div className="text-5xl md:text-6xl font-black text-white mb-2 group-hover:scale-110 transition-transform">95%</div>
+            <div className="text-gray-300 font-medium">Satisfaction client</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">50+</div>
-            <div className="text-gray-400">Projets livrés</div>
+          <div className="group text-center p-6 rounded-xl hover:bg-white/5 transition-all cursor-default">
+            <div className="text-5xl md:text-6xl font-black text-white mb-2 group-hover:scale-110 transition-transform">50+</div>
+            <div className="text-gray-300 font-medium">Projets livrés</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-white mb-2">24/7</div>
-            <div className="text-gray-400">Support technique</div>
+          <div className="group text-center p-6 rounded-xl hover:bg-white/5 transition-all cursor-default">
+            <div className="text-5xl md:text-6xl font-black text-white mb-2 group-hover:scale-110 transition-transform">24/7</div>
+            <div className="text-gray-300 font-medium">Support technique</div>
           </div>
         </div>
       </div>

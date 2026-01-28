@@ -33,20 +33,20 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-slate-900">
+    <section id="services" className="py-24 lg:py-32 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        {/* Section Header - Hiérarchie renforcée */}
+        <div className="text-center mb-28">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Nos <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Services</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto font-semibold leading-relaxed">
             De la formation à la création, nous vous accompagnons dans votre transformation digitale avec l'intelligence artificielle.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        {/* Services Grid - Micro-interactions */}
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
           {services.map((service, index) => (
             <div
               key={index}
@@ -61,14 +61,14 @@ const Services = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
-              <p className="text-gray-400 mb-6">{service.description}</p>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">{service.title}</h3>
+              <p className="text-gray-300 mb-6 text-base leading-relaxed">{service.description}</p>
               
               {/* Features */}
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-gray-300">
-                    <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3"></div>
+                  <li key={featureIndex} className="flex items-center text-gray-300 group-hover:text-white transition-colors">
+                    <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3 group-hover:scale-150 transition-transform"></div>
                     {feature}
                   </li>
                 ))}
@@ -76,7 +76,7 @@ const Services = () => {
 
               {/* Button */}
               <div className="mt-6">
-                <button className={`bg-gradient-to-r ${service.color} text-white px-6 py-2 rounded-full font-medium hover:shadow-lg transition-all duration-300`}>
+                <button className={`bg-gradient-to-r ${service.color} text-white px-6 py-3 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-300`}>
                   En savoir plus
                 </button>
               </div>
@@ -85,7 +85,7 @@ const Services = () => {
         </div>
 
         {/* Benefits Section */}
-        <div className="bg-gradient-to-r from-purple-900/50 to-blue-900/50 rounded-3xl p-12 backdrop-blur-sm border border-purple-800/30">
+        <div className="bg-gradient-to-r from-purple-900/50 to-blue-900/50 rounded-3xl p-16 backdrop-blur-sm border border-purple-800/30">
           <div className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               Pourquoi choisir <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Visiontek</span> ?

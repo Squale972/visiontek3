@@ -80,14 +80,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
+    <section id="contact" className="py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        {/* Section Header - Hiérarchie renforcée */}
+        <div className="text-center mb-24">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Démarrons votre <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Projet IA</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto font-semibold leading-relaxed">
             Contactez-nous pour discuter de vos besoins et découvrir comment l'intelligence artificielle peut transformer votre entreprise.
           </p>
         </div>
