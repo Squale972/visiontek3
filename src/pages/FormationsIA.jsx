@@ -608,38 +608,37 @@ const FormationIA = () => {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { icon: Award, label: "Pôles d'expertise", value: "5", desc: "Domaines spécialisés" },
-            { icon: Users, label: "Entreprises formées", value: "200+", desc: "Accompagnement personnalisé" },
-            { icon: TrendingUp, label: "Impact métier", value: "87%", desc: "ROI moyen constaté" }
-          ].map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <motion.div
-                key={index}
-                whileHover={{ y: -5 }}
-                className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700"
-              >
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-purple-400" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: Award, label: "Pôles d'expertise", value: "5", desc: "Domaines spécialisés" },
+              { icon: Users, label: "Entreprises formées", value: "200+", desc: "Accompagnement personnalisé" },
+              { icon: TrendingUp, label: "Impact métier", value: "87%", desc: "ROI moyen constant" }
+            ].map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <motion.div
+                  key={index}
+                  whileHover={{ y: -5 }}
+                  className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700"
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center">
+                      <Icon className="w-6 h-6 text-purple-400" />
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold text-white">{stat.value}</div>
+                      <div className="text-sm text-slate-400">{stat.label}</div>
+                    </div>
                   </div>
-                  <div>
-                    <div className="text-3xl font-bold text-white">{stat.value}</div>
-                    <div className="text-sm text-slate-400">{stat.label}</div>
-                  </div>
-                </div>
-                <p className="text-slate-400 text-sm">{stat.desc}</p>
-              </motion.div>
-            );
-          })}
-        </div>
+                  <p className="text-slate-400 text-sm">{stat.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
       </section>
+      <Footer />
     </div>
-    <Footer />
-  </div>
-);
+  );
 };
 
 export default FormationIA;
