@@ -12,12 +12,12 @@ const Footer = () => {
         {/* Main Footer Content */}
         <div className="py-12">
           <div className="grid md:grid-cols-4 gap-8">
-            {/* Company Info */}
-            <div className="md:col-span-2">
+            {/* Company Info - Équilibrage colonnes */}
+            <div className="md:col-span-1">
               <div className="flex items-center mb-6">
                 <img src="/logo-dark.jpg" alt="Visiontek" className="h-16 w-auto" />
               </div>
-              <p className="text-gray-300 mb-6 max-w-md">
+              <p className="text-gray-200 mb-6 max-w-md font-medium">
                 Partenaire de votre transformation digitale, nous mettons l'intelligence artificielle 
                 au service de votre croissance avec des solutions sur mesure et un accompagnement expert.
               </p>
@@ -41,16 +41,16 @@ const Footer = () => {
               <h3 className="text-white font-semibold mb-4">Services</h3>
               <ul className="space-y-3">
                 <li>
-                  <a href="#services" className="text-gray-400 hover:text-white transition-colors">Formation IA</a>
+                  <a href="#services" className="text-gray-300 hover:text-white transition-colors">Formation IA</a>
                 </li>
                 <li>
-                  <a href="#services" className="text-gray-400 hover:text-white transition-colors">Consulting IA</a>
+                  <a href="#services" className="text-gray-300 hover:text-white transition-colors">Consulting IA</a>
                 </li>
                 <li>
-                  <a href="#services" className="text-gray-400 hover:text-white transition-colors">Création Web</a>
+                  <a href="#services" className="text-gray-300 hover:text-white transition-colors">Création Web</a>
                 </li>
                 <li>
-                  <a href="#contact" className="text-gray-400 hover:text-white transition-colors">Support Technique</a>
+                  <a href="#contact" className="text-gray-300 hover:text-white transition-colors">Support Technique</a>
                 </li>
               </ul>
             </div>
@@ -61,21 +61,40 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3">
                   <Mail className="w-4 h-4 text-gray-400" />
-                  <a href="mailto:contact@visiontek.com" className="text-gray-400 hover:text-white transition-colors">
+                  <a href="mailto:contact@visiontek.com" className="text-gray-300 hover:text-white transition-colors">
                     contact@visiontek.com
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="w-4 h-4 text-gray-400" />
-                  <a href="tel:+33600000000" className="text-gray-400 hover:text-white transition-colors">
+                  <a href="tel:+33600000000" className="text-gray-300 hover:text-white transition-colors">
                     +33 6 00 00 00 00
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="w-4 h-4 text-gray-400" />
-                  <span className="text-gray-400">Paris, France</span>
+                  <span className="text-gray-300">Paris, France</span>
                 </div>
               </div>
+            </div>
+
+            {/* Resources - Nouvelle 4ème colonne */}
+            <div>
+              <h3 className="text-white font-semibold mb-4">Ressources</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white transition-colors">Blog</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white transition-colors">Cas clients</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white transition-colors">Documentation</a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-white transition-colors">Newsletter</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -83,18 +102,18 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="border-t border-slate-800 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">
+            <div className="text-gray-300 text-sm">
               © 2024 Visiontek. Tous droits réservés.
             </div>
             
             <div className="flex items-center space-x-6">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors">
                 Mentions légales
               </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors">
                 Politique de confidentialité
               </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <a href="#" className="text-gray-300 hover:text-white text-sm transition-colors">
                 CGV
               </a>
             </div>

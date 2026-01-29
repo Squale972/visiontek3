@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { createClient } from '@supabase/supabase-js';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 
 const Contact = () => {

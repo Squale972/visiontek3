@@ -1,9 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Brain, Zap, Globe } from 'lucide-react';
+
+const scrollToServices = () => {
+  const servicesSection = document.getElementById('services');
+  if (servicesSection) {
+    servicesSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-16">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-32">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
@@ -15,18 +23,18 @@ const Hero = () => {
         {/* Floating Icons - Réduits pour focaliser sur le message */}
         <div className="flex justify-center space-x-6 mb-6 opacity-70">
           <div className="animate-bounce hover:scale-110 transition-transform cursor-default">
-            <Brain className="w-6 h-6 text-purple-400" />
+            <Brain className="w-12 h-12 text-purple-400" />
           </div>
           <div className="animate-bounce hover:scale-110 transition-transform cursor-default" style={{ animationDelay: '100ms' }}>
-            <Zap className="w-6 h-6 text-blue-400" />
+            <Zap className="w-12 h-12 text-blue-400" />
           </div>
           <div className="animate-bounce hover:scale-110 transition-transform cursor-default" style={{ animationDelay: '200ms' }}>
-            <Globe className="w-6 h-6 text-indigo-400" />
+            <Globe className="w-12 h-12 text-indigo-400" />
           </div>
         </div>
 
         {/* Main Heading - Typographie audacieuse */}
-        <h1 className="text-6xl md:text-8xl font-black text-white mb-8 leading-tight">
+        <h1 className="text-6xl md:text-7xl font-black text-white mb-8 leading-tight">
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
             L'Intelligence Artificielle
           </span>
@@ -36,26 +44,26 @@ const Hero = () => {
 
         {/* Subtitle - Meilleur contraste et espacement amélioré */}
         <p className="text-xl md:text-2xl text-gray-200 mb-24 max-w-3xl mx-auto leading-relaxed font-medium">
-          Transformez vos ambitions en réalité avec des solutions IA sur mesure, 
+          Transformez vos ambitions en réalité avec des solutions IA sur mesure,
           des formations expertes et une accompagnement personnalisé.
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <a
-            href="#services"
+          <button
+            onClick={scrollToServices}
             className="group bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center space-x-2"
           >
             <span>Découvrir nos services</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
-          
-          <a
-            href="#contact"
+            <ArrowRight className="w-5 h-5" />
+          </button>
+
+          <Link
+            to="/contact"
             className="group border-2 border-purple-400 text-purple-400 px-8 py-4 rounded-full font-semibold text-lg hover:bg-purple-400 hover:text-white transition-all duration-300"
           >
             Contactez-nous
-          </a>
+          </Link>
         </div>
 
         {/* Stats Section - Plus audacieuses */}
