@@ -1,0 +1,552 @@
+import React, { useState } from 'react';
+import { 
+  Brain, 
+  Monitor, 
+  Award, 
+  Users, 
+  ChevronRight, 
+  CheckCircle2, 
+  Code2, 
+  Terminal, 
+  Menu, 
+  X,
+  Sparkles,
+  MousePointer2,
+  Cpu,
+  Layers,
+  ArrowRight
+} from 'lucide-react';
+
+const VisiontekSite = () => {
+  const [activeFilter, setActiveFilter] = useState('all');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Configuration des pôles de formation
+  const formations = [
+    {
+      id: 1,
+      category: 'ia',
+      icon: <Brain className="w-6 h-6 text-white" />,
+      title: "Expertise IA",
+      subtitle: "& efficacité opérationnelle",
+      image: "https://images.unsplash.com/photo-1676299081847-824d1669225e?q=80&w=1000&auto=format&fit=crop", 
+      gradient: "from-purple-600 to-pink-600",
+      shadowColor: "shadow-purple-500/25",
+      borderColor: "group-hover:border-purple-500/50",
+      iconBg: "bg-purple-600",
+      target: "Dirigeants, cadres, indépendants",
+      price: "Sur devis",
+      duration: "Parcours évolutif (7h à 21h)",
+      description: "Transformez vos processus métiers en déployant des écosystèmes d'IA générative pour une productivité exponentielle.",
+      modules: [
+        {
+          level: "Module 1 : Les fondamentaux stratégiques (7h)",
+          topics: [
+            "Panorama de l'écosystème IA (OpenAI, Anthropic, Google) et sélection d'outils",
+            "Prompt engineering structuré : cadres méthodologiques (Role-Task-Context)",
+            "Cas d'usage business : automatisation de la correspondance et synthèse documentaire"
+          ]
+        },
+        {
+          level: "Module 2 : Analyse avancée & multimodalité (14h)",
+          topics: [
+            "Techniques cognitives avancées : Chain-of-Thought & Tree of Thoughts",
+            "Business intelligence : analyse de données massives (Excel/CSV) via IA",
+            "Création de contenu corporate : présentations (Gamma), rapports (NotebookLM) et assets visuels",
+            "Conformité : cadre légal, IA Act, RGPD et protection de la propriété intellectuelle"
+          ]
+        },
+        {
+          level: "Module 3 : Architecture d'agents & workflows (21h)",
+          topics: [
+            "Déploiement d'agents autonomes : custom GPTs connectés aux API métiers",
+            "Orchestration de flux (n8n) : automatisation complexe et logique conditionnelle",
+            "Systèmes RAG (Retrieval-Augmented Generation) : valorisation de votre base de connaissances interne",
+            "Stratégie de déploiement : ROI, choix open source vs propriétaire et conduite du changement"
+          ]
+        }
+      ]
+    },
+    {
+      id: 2,
+      category: 'ia',
+      icon: <Code2 className="w-6 h-6 text-white" />,
+      title: "Développement Web IA-assist",
+      subtitle: "& IA augmentée",
+      image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=1000&auto=format&fit=crop", 
+      gradient: "from-indigo-600 to-purple-600",
+      shadowColor: "shadow-indigo-500/25",
+      borderColor: "group-hover:border-indigo-500/50",
+      iconBg: "bg-indigo-600",
+      target: "Développeurs, CTO, reconversion",
+      price: "Sur devis",
+      duration: "Cursus intensif (21h à 50h+)",
+      description: "Redéfinissez les standards du développement logiciel. Passez du codage manuel à l'architecture de solutions assistée par l'IA.",
+      modules: [
+        {
+          level: "Module 1 : Socle technique & frontend (21h)",
+          topics: [
+            "Architecture Web moderne : HTML5, CSS3 sémantique et algorithmique JS",
+            "Développement assisté : prototypage rapide d'interfaces (Tailwind) via prompting",
+            "Livrable : déploiement d'un portfolio/vitrine haute performance"
+          ]
+        },
+        {
+          level: "Module 2 : Backend & data engineering (36h)",
+          topics: [
+            "Infrastructure serveur : Node.js, Express et architecture de bases de données (SQL/NoSQL)",
+            "API design assisté : génération de routes REST, optimisation SQL et documentation Swagger automatique",
+            "Livrable : système de gestion sécurisé (SaaS) avec dashboard administrateur"
+          ]
+        },
+        {
+          level: "Module 3 : Fullstack & industrialisation (Sur mesure)",
+          topics: [
+            "Sécurité & scalabilité : Auth0/Firebase, gestion d'état global et pipelines CI/CD",
+            "Dev IA-first : utilisation avancée de Claude Code, Opencode et Antigravity pour le refactoring et les tests",
+            "Livrable : MVP complet interconnecté et prêt pour la production"
+          ]
+        }
+      ]
+    },
+    {
+      id: 3,
+      category: 'bureautique',
+      icon: <Monitor className="w-6 h-6 text-white" />,
+      title: "Solutions office",
+      subtitle: "Performance 360°",
+      image: "https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1000&auto=format&fit=crop", 
+      gradient: "from-blue-600 to-cyan-600",
+      shadowColor: "shadow-blue-500/25",
+      borderColor: "group-hover:border-blue-500/50",
+      iconBg: "bg-blue-600",
+      target: "Entreprises, collaborateurs",
+      price: "Sur devis",
+      duration: "Parcours expert (21h à 60h+)",
+      description: "Optimisez la gestion de vos données et la qualité de vos supports de communication avec la suite Office.",
+      modules: [
+        {
+          level: "Module Excel : Business intelligence",
+          topics: [
+            "Essentiel (21h) : structure de données, calculs fondamentaux et visualisation graphique",
+            "Avancé (42h) : analyse multidimensionnelle (TCD), fonctions conditionnelles complexes et consolidation",
+            "Expert (Sur mesure) : automatisation des flux (Power Query), macros VBA et dashboards décisionnels"
+          ]
+        },
+        {
+          level: "Module Word : Communication corporate",
+          topics: [
+            "Essentiel (21h) : mise en page structurée et chartes graphiques",
+            "Avancé (42h) : gestion des longs documents, publipostage ciblé et automatisation des sommaires",
+            "Expert (Sur mesure) : formulaires interactifs, mode révision collaboratif et rapports professionnels"
+          ]
+        },
+        {
+          level: "Module PowerPoint : Présentations à impact",
+          topics: [
+            "Essentiel (21h) : conception visuelle et hiérarchie de l'information",
+            "Avancé (42h) : masques de diapositives (master slides), animations dynamiques et dataviz",
+            "Expert (Sur mesure) : interactivité avancée, scénarisation et intégration multimédia fluide"
+          ]
+        }
+      ]
+    },
+    {
+      id: 4,
+      category: 'numerique',
+      icon: <Users className="w-6 h-6 text-white" />,
+      title: "Digital skills",
+      subtitle: "& culture numérique",
+      image: "https://images.unsplash.com/photo-1639322537228-ad7117a76451?q=80&w=1000&auto=format&fit=crop", 
+      gradient: "from-teal-600 to-emerald-600",
+      shadowColor: "shadow-teal-500/25",
+      borderColor: "group-hover:border-teal-500/50",
+      iconBg: "bg-teal-600",
+      target: "Seniors, reconversion",
+      price: "Sur devis",
+      duration: "Parcours d'autonomie (21h à 42h)",
+      description: "Acquérez une souveraineté numérique totale, de la sécurité des données à l'usage des assistants intelligents.",
+      modules: [
+        {
+          level: "Module 1 : Maîtrise de l'environnement (21h)",
+          topics: [
+            "Écosystème digital : gestion avancée OS (Windows/Mac) et périphériques",
+            "Cybersécurité personnelle : gestion des identifiants, détection du phishing et sécurisation des transactions",
+            "E-administration : maîtrise des portails de service public et communication digitale (visio/email)"
+          ]
+        },
+        {
+          level: "Module 2 : Productivité & cloud (42h)",
+          topics: [
+            "Mobilité & cloud : synchronisation multi-devices et travail collaboratif (Drive/OneDrive)",
+            "Assistance IA : rédaction administrative assistée et traduction instantanée",
+            "Protection avancée : double authentification (2FA) et protection de l'identité numérique"
+          ]
+        },
+        {
+          level: "Module 3 : Identité & collaboration (Sur mesure)",
+          topics: [
+            "Personal branding : optimisation LinkedIn et e-réputation professionnelle",
+            "Travail collaboratif : gestion de projet agile (Trello/Notion) et communication d'équipe (Teams/Slack)",
+            "Dématérialisation : signature électronique et archivage numérique légal"
+          ]
+        }
+      ]
+    },
+    {
+      id: 5,
+      category: 'numerique',
+      icon: <Cpu className="w-6 h-6 text-white" />,
+      title: "Infrastructure IT",
+      subtitle: "& Maintenance",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop", 
+      gradient: "from-slate-600 to-blue-600",
+      shadowColor: "shadow-blue-500/25",
+      borderColor: "group-hover:border-blue-500/50",
+      iconBg: "bg-slate-600",
+      target: "Techniciens, responsables parc",
+      duration: "Module technique (21h à sur mesure)",
+      description: "De l'ingénierie matérielle à l'administration réseau : garantissez la continuité et la performance de votre parc.",
+      modules: [
+        {
+          level: "Module 1 : Hardware & OS (21h)",
+          topics: [
+            "Architecture matérielle : assemblage haute performance et compatibilité des composants",
+            "Déploiement système : installation optimisée (Windows 10/11), gestion UEFI/GPT et pilotes",
+            "Maintenance assistée par IA : diagnostic de pannes via analyse prédictive et assistants virtuels"
+          ]
+        },
+        {
+          level: "Module 2 : Réseaux & sécurité (Sur mesure)",
+          topics: [
+            "Administration réseau : configuration TCP/IP, NAS (Synology) et bases Windows Server",
+            "Sécurité des données : stratégies de backup (3-2-1), clonage et plans de reprise d'activité (PRA)",
+            "Automatisation : scripting PowerShell assisté par IA pour la gestion de parc massive"
+          ]
+        }
+      ]
+    }
+  ];
+
+  const filteredFormations = activeFilter === 'all' 
+    ? formations 
+    : formations.filter(f => f.category === activeFilter);
+
+  return (
+    <div className="min-h-screen bg-slate-900 text-white font-sans selection:bg-purple-500/30 overflow-x-hidden">
+      
+      {/* Effets de fond animés */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse"></div>
+        <div className="absolute top-[20%] right-[-10%] w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse delay-700"></div>
+        <div className="absolute bottom-[-10%] left-[20%] w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-10 animate-pulse delay-1000"></div>
+      </div>
+
+      {/* Barre de navigation */}
+      <header className="fixed w-full z-50 top-0 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          <div className="flex items-center space-x-2">
+            <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/20">
+              <span className="font-bold text-xl text-white">V</span>
+            </div>
+            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+              Visiontek
+            </span>
+          </div>
+
+          <nav className="hidden md:flex space-x-8">
+            {['Expertise', 'Formations', 'Consulting', 'À propos'].map((item) => (
+              <a key={item} href="#" className="text-sm font-medium text-slate-300 hover:text-white transition-colors relative group">
+                {item}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transition-all group-hover:w-full"></span>
+              </a>
+            ))}
+          </nav>
+
+          <button className="hidden md:flex bg-slate-800 hover:bg-slate-700 text-white px-6 py-2 rounded-full border border-slate-700 transition-all text-sm font-medium">
+            Contact
+          </button>
+
+          <button className="md:hidden text-slate-300" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X /> : <Menu />}
+          </button>
+        </div>
+      </header>
+
+      {/* Section Héro */}
+      <section className="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-slate-800/50 border border-slate-700 backdrop-blur-sm mb-8 animate-fade-in-up">
+            <span className="flex h-2 w-2 rounded-full bg-green-400 mr-2 animate-pulse"></span>
+            <span className="text-sm text-slate-300">Expertise numérique & innovation depuis 1996</span>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight leading-tight">
+            Se <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">former</span> à l'excellence <br />
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">numérique & IA</span>
+          </h1>
+          
+          <p className="mt-4 text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+            Accompagnement stratégique et formations de haut niveau. 
+            Alliez la puissance de l'IA à une expertise technique éprouvée pour une performance opérationnelle immédiate.
+          </p>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+            <button className="px-8 py-4 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-lg shadow-lg shadow-purple-500/25 hover:scale-105 transition-transform flex items-center justify-center">
+              Découvrir les parcours <ArrowRight className="ml-2 w-5 h-5" />
+            </button>
+            {/* Remplacement de "Demander un audit" par "Nous contacter" */}
+            <button className="px-8 py-4 rounded-full bg-slate-800/50 border border-slate-700 text-slate-300 font-medium hover:bg-slate-800 hover:text-white transition-all backdrop-blur-sm">
+              Nous contacter
+            </button>
+          </div>
+
+          {/* Trust Badges - Icônes rendues plus lumineuses et colorées */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto border-t border-slate-800/50 pt-10">
+            {[
+              { icon: Brain, text: "Expertise IA", color: "text-purple-400", glow: "shadow-purple-500/20" },
+              { icon: Terminal, text: "Ingénierie Web", color: "text-indigo-400", glow: "shadow-indigo-500/20" },
+              { icon: Monitor, text: "Solutions Office", color: "text-blue-400", glow: "shadow-blue-500/20" },
+              { icon: MousePointer2, text: "Digital Skills", color: "text-teal-400", glow: "shadow-teal-500/20" }
+            ].map((badge, idx) => (
+              <div key={idx} className="flex flex-col items-center justify-center p-4 group">
+                <div className={`p-3 rounded-xl bg-slate-800/30 mb-2 transition-all duration-300 group-hover:scale-110 group-hover:bg-slate-800/50 shadow-lg ${badge.glow}`}>
+                    <badge.icon className={`w-8 h-8 ${badge.color} filter drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]`} />
+                </div>
+                <span className="text-slate-400 font-medium text-center text-sm">{badge.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section Catalogues / Pôles */}
+      <section id="formations" className="relative z-10 py-20 bg-slate-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="flex flex-col md:flex-row justify-between items-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 md:mb-0">
+              Nos pôles d'<span className="text-purple-400">expertise</span>
+            </h2>
+            
+            <div className="flex flex-wrap justify-center gap-2 p-1.5 bg-slate-800/50 backdrop-blur-sm rounded-full border border-slate-700">
+              {[
+                { id: 'all', label: 'Vue d\'ensemble' },
+                { id: 'ia', label: 'Intelligence artificielle' },
+                { id: 'bureautique', label: 'Solutions office' },
+                { id: 'numerique', label: 'Infrastructure & digital' }
+              ].map((filter) => (
+                <button
+                  key={filter.id}
+                  onClick={() => setActiveFilter(filter.id)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    activeFilter === filter.id
+                      ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-lg'
+                      : 'text-slate-400 hover:text-white hover:bg-slate-700/50'
+                  }`}
+                >
+                  {filter.label}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {filteredFormations.map((formation, idx) => (
+              <div 
+                key={formation.id}
+                className={`group relative bg-slate-800/40 backdrop-blur-md rounded-2xl border border-slate-700 overflow-hidden 
+                transition-all duration-500 flex flex-col h-full 
+                hover:-translate-y-2 hover:shadow-2xl ${formation.shadowColor} ${formation.borderColor}
+                ${idx === filteredFormations.length - 1 && filteredFormations.length % 2 !== 0 ? 'lg:col-span-2 lg:max-w-4xl lg:mx-auto lg:w-full' : ''}`}
+              >
+                
+                {/* En-tête avec Image Concept Art */}
+                <div className="relative h-48 w-full overflow-hidden">
+                    <img 
+                        src={formation.image} 
+                        alt={`Concept lumineux pour ${formation.title}`} 
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent"></div>
+                    
+                    <div className="absolute top-4 right-4">
+                        <span className="px-3 py-1 rounded-full text-xs font-semibold bg-slate-900/80 text-white border border-slate-700 backdrop-blur-md shadow-lg">
+                             {formation.category.toUpperCase()}
+                        </span>
+                    </div>
+
+                    <div className="absolute bottom-4 left-6 flex items-center space-x-3">
+                        <div className={`p-2.5 rounded-lg ${formation.iconBg} shadow-lg shadow-black/30 group-hover:scale-110 transition-transform duration-300`}>
+                            {formation.icon}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="p-8 pt-4 flex flex-col flex-grow relative z-10">
+                    <div className="mb-4">
+                        <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-300 transition-all duration-300">
+                        {formation.title}
+                        </h3>
+                        <span className="text-sm font-medium text-slate-400/80 block">{formation.subtitle}</span>
+                    </div>
+                    
+                    <p className="text-slate-400 mb-6 text-sm flex-grow leading-relaxed">
+                    {formation.description}
+                    </p>
+
+                    {formation.modules ? (
+                    <div className="space-y-6 mb-8 bg-slate-900/60 p-6 rounded-xl border border-slate-700/50 shadow-inner group-hover:border-slate-600/50 transition-colors">
+                        {formation.modules.map((module, mIdx) => (
+                        <div key={mIdx} className="border-b border-slate-700/50 last:border-0 pb-4 last:pb-0">
+                            <div className="flex items-center mb-2">
+                            <Layers className={`w-4 h-4 mr-2 text-slate-400 group-hover:text-white transition-colors duration-300`} />
+                            <h4 className="font-bold text-slate-200 text-sm">{module.level}</h4>
+                            </div>
+                            <ul className="space-y-1.5 ml-6">
+                            {module.topics.map((topic, tIdx) => (
+                                <li key={tIdx} className="text-slate-400 text-sm list-disc pl-1 marker:text-slate-600 group-hover:marker:text-slate-400 transition-colors">
+                                {topic}
+                                </li>
+                            ))}
+                            </ul>
+                        </div>
+                        ))}
+                    </div>
+                    ) : null}
+
+                    <div className="mt-auto pt-6 border-t border-slate-700/50 flex items-center justify-between gap-4">
+                        <div className="flex flex-col mr-auto">
+                            <span className="text-xs text-slate-500 uppercase tracking-wider mb-1">Audience cible</span>
+                            <span className="text-sm font-medium text-slate-300 mb-1">{formation.target}</span>
+                        </div>
+                        
+                        <div className="flex items-center gap-3">
+                            <button className={`text-white bg-slate-800 px-6 py-2.5 rounded-full transition-all duration-300 shadow-lg border border-slate-700 group-hover:bg-gradient-to-r ${formation.gradient} flex items-center gap-2 group-hover:border-transparent group-hover:shadow-${formation.shadowColor}`}>
+                            <span className="text-xs font-bold whitespace-nowrap">Nous contacter</span>
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* Section Pourquoi Visiontek */}
+      <section className="relative py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl border border-slate-700 p-8 md:p-12 overflow-hidden relative shadow-2xl">
+            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+            
+            <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  L'approche <br />
+                  <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    Visiontek Formation
+                  </span>
+                </h2>
+                <p className="text-lg text-slate-300 mb-8 leading-relaxed">
+                  Au-delà de l'expertise technique, je propose un partenariat stratégique. Fort de 25 ans d'expérience terrain, je conçois des parcours pédagogiques qui transforment la complexité technologique en levier de croissance.
+                </p>
+                
+                <div className="space-y-6">
+                  {[
+                    { title: "Ingénierie pédagogique agile", desc: "Des programmes sur-mesure, ajustés en temps réel au niveau et aux objectifs des apprenants." },
+                    { title: "Double compétence rare", desc: "La synergie entre une expertise technique pointue (Dev, infra) et une andragogie éprouvée." },
+                    { title: "Orientation ROI", desc: "Chaque compétence acquise doit se traduire par un gain de productivité immédiat pour l'entreprise." }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex group">
+                      <div className="flex-shrink-0 mr-4">
+                        <div className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center group-hover:bg-purple-500/20 transition-colors">
+                          <Sparkles className="w-5 h-5 text-yellow-400" />
+                        </div>
+                      </div>
+                      <div>
+                        <h4 className="text-white font-bold group-hover:text-purple-300 transition-colors">{item.title}</h4>
+                        <p className="text-slate-400 text-sm">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl transform rotate-3 opacity-20 blur-lg"></div>
+                <div className="bg-slate-800 border border-slate-600 rounded-2xl p-8 relative shadow-2xl backdrop-blur-sm">
+                   <div className="flex items-center mb-6">
+                     <div className="w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center font-bold text-xl mr-4 border border-slate-600 text-slate-300">TR</div>
+                     <div>
+                       <div className="font-bold text-white">Tony Raharidzery</div>
+                       <div className="text-sm text-purple-400">Fondateur & consultant senior</div>
+                     </div>
+                   </div>
+                   <p className="text-slate-300 italic mb-4">
+                     "La technologie ne doit pas être une barrière, mais un accélérateur. Mon rôle est de vous donner les clés pour passer de l'utilisateur passif à l'architecte de vos propres solutions."
+                   </p>
+                   <div className="flex items-center text-sm text-slate-500 mt-6 pt-6 border-t border-slate-700/50">
+                     <MousePointer2 className="w-4 h-4 mr-1" />
+                     <span>Intervention : Martinique (sur site) & international (remote)</span>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pied de page */}
+      <footer className="bg-slate-900 border-t border-slate-800 pt-12 pb-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="font-bold text-white text-sm">V</span>
+                </div>
+                <span className="text-xl font-bold text-white">Visiontek</span>
+              </div>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                Cabinet de conseil et formation numérique. <br/>
+                Propulser les compétences. Sécuriser les infrastructures.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="text-white font-bold mb-4">Expertise</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li><a href="#" className="hover:text-purple-400 transition-colors">Business intelligence</a></li>
+                <li><a href="#" className="hover:text-purple-400 transition-colors">Expertise IA</a></li>
+                <li><a href="#" className="hover:text-purple-400 transition-colors">Cybersécurité</a></li>
+                <li><a href="#" className="hover:text-purple-400 transition-colors">Ingénierie système</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-white font-bold mb-4">Contact professionnel</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li>t.raharidzery@gmail.com</li>
+                <li>+596 696 97 57 77</li>
+                <li className="pt-2">
+                  <button className="w-full bg-slate-800 hover:bg-slate-700 text-white py-2 rounded border border-slate-700 transition-colors font-medium">
+                    Prendre rendez-vous
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-slate-500 text-sm">© 2026 Visiontek - Tony Raharidzery. Tous droits réservés.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default VisiontekSite;
