@@ -69,25 +69,74 @@
 - ✅ **PHASE 3B TERMINÉE** : Standardisation Footers
   - ✅ Pages déjà conformes : Accueil (Footer.jsx), Contact (intégré)
   - ✅ Formations IA : Ajout `<Footer />` + import Footer
-  - ✅ Consulting IA : Ajout `<Footer />` + import Footer  
-   - ✅ Créateur Web : Remplacement footer inline par `<Footer />` + import Footer
-   - ✅ Footer unique : Composant Footer.jsx utilisé sur toutes les pages
-   - ✅ Cohérence 100% : Design et navigation identiques
+  - ✅ Consulting IA : Ajout `<Footer />` + import Footer
+  - ✅ Créateur Web : Remplacement footer inline par `<Footer />` + import Footer
+  - ✅ Footer unique : Composant Footer.jsx utilisé sur toutes les pages
+  - ✅ Cohérence 100% : Design et navigation identiques
 - ✅ **ERREURS JSX CORRIGÉES** : 6 erreurs structurelles résolues
   - ✅ ConsultingIA.jsx : 3 icônes comme conteneurs (Brain, TrendingUp, Users) → remplacées par `<div>`
   - ✅ FormationsIA.jsx : Balise fermante en trop, code dupliqué, Footer mal positionné → corrigés
   - ✅ Build local validé : 3.99s sans erreur
   - ✅ Git push 7d023d5 : Corrections commitées et pushées
   - ✅ Netlify deployment : En attente de redéploiement avec corrections
+- ✅ **PHASE 3D TERMINÉE** : Standardisation Animations Titres
+  - ✅ Animations cohérentes (Accueil, Consulting IA, Créateur Web)
+  - ✅ Pattern spring physics + staggered delays appliqué
+  - ✅ Imports framer-motion ajoutés
+  - ✅ Conteneur principal animé avec opacity + y-translate
+  - ✅ Icônes flottantes animées avec scale
+  - ✅ Titre h1 animé avec scale (delay 0.2-0.3s)
+  - ✅ Paragraphe p animé avec y-translate (delay 0.4s)
+  - ✅ Bouton CTA animé avec y-translate (delay 0.5s)
+- ✅ **PLAN INTÉGRATION VISUELLE DÉFINI** (PHASE 3E à 3J)
+  - ✅ Méthodologie page par page confirmée
+  - ✅ Choix visuels validés (illustrations vectorielles, split screen hero, etc.)
+  - ✅ Structure phases simplifiée créée
 
-**Bloqueurs :** Aucun - site 5 pages fonctionnelles + navigation complète + footers standardisés + erreurs JSX corrigées + en attente déploiement Netlify
+**Bloqueurs :** Aucun
 
 **Next Steps :**
-- 🎯 **PHASE 3C** : Création Page Blog (dernière page manquante)
-  - Page Blog.jsx avec articles IA et actualités tech
-  - Navigation Header.jsx + App.jsx route /blog
-  - Design cohérent avec charte existante
-  - Tests responsive et performance
+- 🎯 **En attente fichiers d'intégration visuelle** (`.md` + visuels) pour commencer PHASE 3E
+- Phase 3E : Intégration visuelle - Page Accueil (en attente `docs/accueil-integration.md`)
+- Phase 3F : Intégration visuelle - Page Formations (en attente `docs/formations-integration.md`)
+- Phase 3G : Intégration visuelle - Page Consulting IA (en attente `docs/consulting-integration.md`)
+- Phase 3H : Intégration visuelle - Page Créateur Web (en attente `docs/createur-web-integration.md`)
+- Phase 3I : Intégration visuelle - Page Contact (en attente `docs/contact-integration.md`)
+- Phase 3J : Optimisation performance visuels (après intégrations)
+- Phase 3C (Création page Blog) prévue après intégrations visuelles
+
+## Méthodologie de Travail - Intégration Visuelle
+- **Format instructions** : Fichiers `.md` dans dossier `docs/`
+- **Organisation assets** : L'assistant organise les visuels dans `public/images/`
+- **Approche** : Page par page (fourniture → intégration)
+- **Convention nommage** : Spécifiée dans chaque fichier `.md` par utilisateur
+- **Ordre** : Accueil → Formations → Consulting IA → Créateur Web → Contact
+
+## Structure d'Intégration à Venir
+
+### Phase 3E : Intégration visuelle - Page Accueil
+- Prérequis : `docs/accueil-integration.md` + fichiers visuels
+- Livrables : Hero.jsx + Services.jsx avec visuels intégrés
+
+### Phase 3F : Intégration visuelle - Page Formations
+- Prérequis : `docs/formations-integration.md` + fichiers visuels
+- Livrables : FormationsIA.jsx avec visuels intégrés
+
+### Phase 3G : Intégration visuelle - Page Consulting IA
+- Prérequis : `docs/consulting-integration.md` + fichiers visuels
+- Livrables : ConsultingIA.jsx avec visuels intégrés
+
+### Phase 3H : Intégration visuelle - Page Créateur Web
+- Prérequis : `docs/createur-web-integration.md` + fichiers visuels (incluant Nano Banana)
+- Livrables : CreateurWeb.jsx avec visuels intégrés
+
+### Phase 3I : Intégration visuelle - Page Contact
+- Prérequis : `docs/contact-integration.md` + fichiers visuels
+- Livrables : Contact.jsx avec visuels intégrés + carte
+
+### Phase 3J : Optimisation performance visuels
+- Prérequis : Intégrations visuelles terminées
+- Livrables : Optimisation WebP, lazy loading, Core Web Vitals > 90
 
 ## 📁 FICHIERS COMPLÉMENTAIRES :
 - `docs/backend/` (complète) - Documentation technique backend
@@ -100,7 +149,7 @@
 - `src/assets/images/formations/index.js` - Placeholders images formations
 - `src/styles/accessibility.css` - CSS accessibility WCAG AA
 
-## 📂 **ARCHITECTURE TECHNIQUE ACTUELLE**
+## 📂 ARCHITECTURE TECHNIQUE ACTUELLE :
 ```
 src/
 ├─ components/
@@ -120,7 +169,7 @@ src/
 └─ App.jsx (Router avec 5 routes + main semantic)
 ```
 
-## 🎯 **ÉTAT APPLICATION FINAL**
+## 🎯 ÉTAT APPLICATION FINAL :
 - **Pages fonctionnelles** : Accueil, Formations, Consulting IA, Créateur Web, Contact (5/5)
 - **Navigation** : React Router DOM 100% opérationnel
 - **Backend** : Supabase table contacts fonctionnelle
@@ -129,30 +178,22 @@ src/
 - **Accessibilité** : WCAG AA conforme (9/10)
 - **Footers** : Standardisés avec composant Footer.jsx sur toutes les pages
 - **Erreurs** : Pattern 6 documenté (Imports React Router)
+- **Animations** : Titres standardisés sur toutes les pages (Pattern spring physics)
 
-**PHASE 2B/2C/2D TERMINÉES AVEC SUCCÈS :**
-- **Formation IA** : Composant déplacé + programmes détaillés (15min)
-- **Consultant IA** : Page corporate B2B premium (1h)
-- **Créateur Web** : Page AI-Native avec glassmorphism (45min)
-- **Navigation** : React Router Links fonctionnels (30min)
-- **Accueil** : Décalage 50px + icônes 2x (15min)
-- **Durée totale** : 8h45 (vs 3 jours prévus)
-- **Gain temps** : 2 jours 15h d'avance (85% plus rapide)
-
-**PHASE 3A OPTIMISATION TERMINÉE AVEC SUCCÈS :**
-- **WCAG AA** : Skip link + ARIA + semantic HTML5 + contraste
-- **Performance** : prefers-reduced-motion + Framer Motion optimisé
-- **Score Layout** : 8.5/10 → 9.2/10 (+0.7) objectif atteint
-- **Durée totale** : 1h30 (vs 3h prévus)
-- **Gain temps** : 1h30 d'avance (50% plus rapide)
-
-**PHASE 3B STANDARDISATION FOOTERS TERMINÉE AVEC SUCCÈS :**
-- **Footer unique** : Composant Footer.jsx utilisé sur toutes les pages
-- **Cohérence 100%** : Design et navigation identiques
-- **Maintenance simplifiée** : 1 seul fichier à maintenir
+**PHASE 3D TERMINÉE AVEC SUCCÈS :**
+- **Accueil** : Conteneur + icônes + titre + paragraphe animés
+- **Consulting IA** : Conteneur + icônes + badge + titre + paragraphe + CTA animés
+- **Créateur Web** : Conteneur + icônes + titre + paragraphe animés
+- **Cohérence 100%** : Pattern spring physics + staggered delays appliqué
 - **Durée totale** : 15min (vs 30min prévu)
 - **Gain temps** : 15min d'avance (50% plus rapide)
 
-**APPLICATION PRODUCTION READY** : 5 pages complètes + navigation + backend + optimisations WCAG AA + footers standardisés
+**PLAN INTÉGRATION VISUELLE PRÊT :**
+- **Méthodologie** : Page par page séquentiel
+- **Format** : Fichiers `.md` dans `docs/` + fichiers visuels
+- **Organisation** : `public/images/` par l'assistant
+- **Phases** : 3E (Accueil) → 3F (Formations) → 3G (Consulting) → 3H (Créateur) → 3I (Contact) → 3J (Optimisation)
 
-**PROCHAINE ACTION** : Créer page Blog (dernière page manquante pour site 6 pages complètes)
+**APPLICATION PRODUCTION READY** : 5 pages complètes + navigation + backend + optimisations WCAG AA + footers standardisés + animations titres standardisés + plan intégration visuelle défini
+
+**PROCHAINE ACTION** : En attente fichiers d'intégration visuelle (`.md` + visuels) pour commencer PHASE 3E

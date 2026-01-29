@@ -459,6 +459,179 @@ Créer une application web vitrine pour une entreprise spécialisée en IA et se
 
 ---
 
+## 🎨 **PHASE 3E: INTÉGRATION VISUELLE - PAGE ACCUEIL** (En attente de fichiers)
+
+**📊 Méthode de travail :** Page par page  
+**📂 Fichiers requis :** `docs/accueil-integration.md` + fichiers visuels  
+**📂 Placement assets :** `public/images/` (structure organisée par l'assistant)
+
+### 🎯 **Choix Méthodologiques Confirmés**
+- ✅ **Format instructions :** Fichiers `.md` dans dossier `docs/`
+- ✅ **Organisation assets :** L'assistant organise les visuels dans `public/images/`
+- ✅ **Approche :** Page par page (fourniture → intégration)
+- ✅ **Convention nommage :** Spécifiée dans chaque fichier `.md` par utilisateur
+
+### 📋 **Processus d'Intégration**
+1. L'utilisateur fournit `docs/accueil-integration.md` + fichiers visuels
+2. L'assistant organise les visuels dans `public/images/` selon structure logique
+3. L'assistant lit et analyse `docs/accueil-integration.md`
+4. L'assistant intègre les visuels dans Hero.jsx et Services.jsx selon instructions
+5. Tests responsive et validation visuelle
+6. Passage à la page suivante
+
+### 📋 **Prérequis**
+- [ ] Fichier `docs/accueil-integration.md` fourni par utilisateur
+- [ ] Fichiers visuels fournis (images, infographies)
+- [ ] Instructions d'intégration spécifiées dans le fichier .md
+
+### 📋 **Tâches d'Intégration**
+- [ ] Lire et analyser `docs/accueil-integration.md`
+- [ ] Organiser les fichiers visuels dans `public/images/`
+- [ ] Intégrer visuels dans Hero.jsx selon instructions
+- [ ] Intégrer visuels dans Services.jsx selon instructions
+- [ ] Vérifier responsive des images (mobile/tablet/desktop)
+- [ ] Implémenter lazy loading pour les images
+- [ ] Optimiser performance (WebP, compression)
+
+### 📋 **Livrables**
+- [ ] Hero.jsx avec visuels intégrés
+- [ ] Services.jsx avec visuels intégrés
+- [ ] Assets organisés dans `public/images/`
+- [ ] Tests visuels validés (mobile/tablet/desktop)
+- [ ] Optimisations WebP/lazy loading implémentées
+
+---
+
+## 🎨 **PHASE 3F: INTÉGRATION VISUELLE - PAGE FORMATIONS** (En attente de fichiers)
+
+**📊 Méthode de travail :** Page par page  
+**📂 Fichiers requis :** `docs/formations-integration.md` + fichiers visuels  
+**📂 Placement assets :** `public/images/` (structure organisée par l'assistant)
+
+### 📋 **Prérequis**
+- [ ] Fichier `docs/formations-integration.md` fourni par utilisateur
+- [ ] Fichiers visuels fournis
+- [ ] Instructions d'intégration spécifiées
+
+### 📋 **Tâches d'Intégration**
+- [ ] Lire et analyser `docs/formations-integration.md`
+- [ ] Organiser les fichiers visuels dans `public/images/`
+- [ ] Intégrer visuels dans FormationsIA.jsx selon instructions
+- [ ] Vérifier responsive
+- [ ] Optimiser performance
+
+### 📋 **Livrables**
+- [ ] FormationsIA.jsx avec visuels intégrés
+- [ ] Assets organisés dans `public/images/`
+- [ ] Tests validés
+- [ ] Optimisations implémentées
+
+---
+
+## 🎨 **PHASE 3G: INTÉGRATION VISUELLE - PAGE CONSULTING IA** (En attente de fichiers)
+
+**📊 Méthode de travail :** Page par page  
+**📂 Fichiers requis :** `docs/consulting-integration.md` + fichiers visuels  
+**📂 Placement assets :** `public/images/` (structure organisée par l'assistant)
+
+### 📋 **Prérequis**
+- [ ] Fichier `docs/consulting-integration.md` fourni par utilisateur
+- [ ] Fichiers visuels fournis
+- [ ] Instructions d'intégration spécifiées
+
+### 📋 **Tâches d'Intégration**
+- [ ] Lire et analyser `docs/consulting-integration.md`
+- [ ] Organiser les fichiers visuels dans `public/images/`
+- [ ] Intégrer visuels dans ConsultingIA.jsx selon instructions
+- [ ] Vérifier responsive
+- [ ] Optimiser performance
+
+### 📋 **Livrables**
+- [ ] ConsultingIA.jsx avec visuels intégrés
+- [ ] Assets organisés dans `public/images/`
+- [ ] Tests validés
+- [ ] Optimisations implémentées
+
+---
+
+## 🎨 **PHASE 3H: INTÉGRATION VISUELLE - PAGE CRÉATEUR WEB** (En attente de fichiers)
+
+**📊 Méthode de travail :** Page par page  
+**📂 Fichiers requis :** `docs/createur-web-integration.md` + fichiers visuels (incluant infographies Nano Banana)  
+**📂 Placement assets :** `public/images/` (structure organisée par l'assistant)
+
+### 📋 **Prérequis**
+- [ ] Fichier `docs/createur-web-integration.md` fourni par utilisateur
+- [ ] Fichiers visuels fournis (incluant infographies Nano Banana)
+- [ ] Instructions d'intégration spécifiées
+
+### 📋 **Tâches d'Intégration**
+- [ ] Lire et analyser `docs/createur-web-integration.md`
+- [ ] Organiser les fichiers visuels dans `public/images/`
+- [ ] Intégrer visuels dans CreateurWeb.jsx selon instructions
+- [ ] Intégrer infographies Nano Banana spécifiées
+- [ ] Intégrer exemples sites (traditionnel + AI-Native)
+- [ ] Intégrer illustration avantage stratégique
+- [ ] Vérifier responsive
+- [ ] Optimiser performance
+
+### 📋 **Livrables**
+- [ ] CreateurWeb.jsx avec visuels intégrés
+- [ ] Assets organisés dans `public/images/`
+- [ ] Infographies Nano Banana intégrées
+- [ ] Tests validés
+- [ ] Optimisations implémentées
+
+---
+
+## 🎨 **PHASE 3I: INTÉGRATION VISUELLE - PAGE CONTACT** (En attente de fichiers)
+
+**📊 Méthode de travail :** Page par page  
+**📂 Fichiers requis :** `docs/contact-integration.md` + fichiers visuels  
+**📂 Placement assets :** `public/images/` (structure organisée par l'assistant)
+
+### 📋 **Prérequis**
+- [ ] Fichier `docs/contact-integration.md` fourni par utilisateur
+- [ ] Fichiers visuels fournis
+- [ ] Instructions d'intégration spécifiées
+
+### 📋 **Tâches d'Intégration**
+- [ ] Lire et analyser `docs/contact-integration.md`
+- [ ] Organiser les fichiers visuels dans `public/images/`
+- [ ] Intégrer visuels dans Contact.jsx selon instructions
+- [ ] Intégrer carte (selon instructions)
+- [ ] Vérifier responsive
+- [ ] Optimiser performance
+
+### 📋 **Livrables**
+- [ ] Contact.jsx avec visuels intégrés
+- [ ] Assets organisés dans `public/images/`
+- [ ] Carte fonctionnelle
+- [ ] Tests validés
+- [ ] Optimisations implémentées
+
+---
+
+## 🎨 **PHASE 3J: OPTIMISATION PERFORMANCE VISUELS** (Après intégrations)
+
+**📊 Objectif :** Optimiser Core Web Vitals pour toutes les images
+
+### 📋 **Optimisations**
+- [ ] Lazy loading toutes les images
+- [ ] Responsive images (srcset, sizes)
+- [ ] WebP conversion 100%
+- [ ] Compression optimale (80-85%)
+- [ ] Preload hero images
+- [ ] Web Vitals monitoring (LCP, CLS)
+
+### 📋 **Livrables**
+- [ ] Images WebP optimisées
+- [ ] Lazy loading implémenté
+- [ ] Core Web Vitals > 90
+- [ ] Documentation optimisation
+
+---
+
 ## 🎯 **PROCHAINE ACTION**
 
 ### 🚀 **PHASE 3C: CRÉATION PAGE BLOG** (Dernière étape)
