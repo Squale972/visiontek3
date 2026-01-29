@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from 'framer-motion';
+import Footer from '../components/Footer';
 
 // Hook pour détecter les préférences de mouvement
 const useReducedMotion = () => {
@@ -636,7 +637,9 @@ const FormationIA = () => {
         </div>
       </section>
     </div>
-  );
+    <Footer />
+  </div>
+);
 };
 
 export default FormationIA;

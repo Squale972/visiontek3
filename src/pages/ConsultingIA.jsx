@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Clock, TrendingUp, Shield, BarChart3, CheckCircle, Users, Target, Zap, AlertCircle, PieChart, Lock, Award, Headphones, Brain, Zap as ZapIcon, Shield as ShieldIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
 
 const ConsultingIA = () => {
   return (
@@ -517,6 +518,7 @@ const ConsultingIA = () => {
         </div>
       </section>
     </div>
+    <Footer />
   );
 };
 

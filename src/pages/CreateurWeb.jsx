@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Brain, Zap, Shield, Clock, TrendingUp, Users, Target, ChevronDown, ChevronUp, Check, Star, ArrowRight as ArrowIcon } from 'lucide-react';
+import Footer from '../components/Footer';
 
 const CreateurWeb = () => {
   const [expandedFaq, setExpandedFaq] = useState(null);
@@ -479,44 +480,7 @@ const CreateurWeb = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-slate-950 border-t border-slate-800 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-lg font-semibold mb-4 text-white">Visiontek</h3>
-              <p className="text-gray-400">L'IA native au service de votre croissance.</p>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4 text-white">Services</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Consulting IA</li>
-                <li>Formation IA</li>
-                <li>Création Web IA-Native</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4 text-white">Légal</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Mentions légales</li>
-                <li>RGPD & Confidentialité</li>
-                <li>CGV/CGU</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4 text-white">Certifications</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Certification IA Expert</li>
-                <li>ISO 27001</li>
-                <li>Souveraineté Européenne</li>
-              </ul>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-slate-800 text-center text-gray-400">
-            <p>&copy; 2026 Visiontek. Tous droits réservés.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

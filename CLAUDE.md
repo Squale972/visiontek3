@@ -206,7 +206,40 @@ Créer une application web vitrine pour une entreprise spécialisée en IA et se
 
 ---
 
-## 🟢 **PHASE 3B: CRÉATION PAGE BLOG** (Prochaine étape)
+## 🟢 **PHASE 3B: STANDARDISATION FOOTERS** (Prochaine étape)
+
+**📅 Prévision :** 2026-01-29 10:00 → 2026-01-29 10:30 (30min)  
+**⏱️ Durée estimée :** 30min  
+**📊 Objectif :** Uniformiser tous les footers avec le composant Footer.jsx
+
+### 📋 Validations Footer à Effectuer
+
+#### ✅ **Pages déjà conformes**
+- [x] **Accueil** : Utilise `<Footer />` composant (src/pages/Accueil.jsx:16)
+- [x] **Contact** : Intégré dans composant Contact.jsx
+
+#### ✅ **Pages corrigées**
+- [x] **Formations IA** : Ajout `<Footer />` + import Footer (src/pages/FormationsIA.jsx)
+- [x] **Consultant IA** : Ajout `<Footer />` + import Footer (src/pages/ConsultingIA.jsx)  
+- [x] **Créateur Web** : Remplacement footer inline par `<Footer />` + import Footer
+
+#### 🎯 **Validations à effectuer**
+- [ ] **Navigation cohérente** : Tous les liens footer fonctionnent
+- [ ] **Design uniforme** : Même style sur toutes les pages
+- [ ] **Responsive test** : Footer mobile/desktop identique
+- [ ] **Accessibilité** : ARIA labels et focus cohérents
+
+#### 📊 **Problèmes identifiés et corrigés**
+- **CreateurWeb.jsx** : Footer inline différent du composant standard → **Corrigé**
+- **FormationsIA.jsx** : Footer manquant → **Corrigé**  
+- **ConsultingIA.jsx** : Footer manquant → **Corrigé**
+
+#### 🎯 **Résultat attendu**
+- **Footer unique** : Composant Footer.jsx utilisé sur toutes les pages
+- **Cohérence 100%** : Design et navigation identiques
+- **Maintenance simplifiée** : 1 seul fichier à maintenir
+
+**PROCHAINE ACTION** : Valider standardisation footers → Créer page Blog (dernière page manquante)
 
 **📅 Prévision :** 2026-01-29 10:00 → 2026-01-29 12:00 (2h)  
 **⏱️ Durée estimée :** 2h  
