@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Brain, Zap, Globe } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowRight, Brain, Zap, Globe, TrendingUp } from 'lucide-react';
 
 const scrollToServices = () => {
   const servicesSection = document.getElementById('services');
@@ -19,9 +20,19 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <motion.div 
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, type: "spring" }}
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+      >
         {/* Floating Icons - Réduits pour focaliser sur le message */}
-        <div className="flex justify-center space-x-6 mb-6 opacity-70">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 0.7, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex justify-center space-x-6 mb-6"
+        >
           <div className="animate-bounce hover:scale-110 transition-transform cursor-default">
             <Brain className="w-12 h-12 text-purple-400" />
           </div>
@@ -31,22 +42,33 @@ const Hero = () => {
           <div className="animate-bounce hover:scale-110 transition-transform cursor-default" style={{ animationDelay: '200ms' }}>
             <Globe className="w-12 h-12 text-indigo-400" />
           </div>
-        </div>
+        </motion.div>
 
         {/* Main Heading - Typographie audacieuse */}
-        <h1 id="hero-title" className="text-6xl md:text-7xl font-black text-white mb-8 leading-tight">
+        <motion.h1
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          id="hero-title"
+          className="text-6xl md:text-7xl font-black text-white mb-8 leading-tight"
+        >
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
             L'Intelligence Artificielle
           </span>
           <br />
           <span className="text-white font-extrabold tracking-tight">au service de votre croissance</span>
-        </h1>
+        </motion.h1>
 
         {/* Subtitle - Meilleur contraste et espacement amélioré */}
-        <p className="text-xl md:text-2xl text-gray-200 mb-24 max-w-3xl mx-auto leading-relaxed font-medium">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-xl md:text-2xl text-gray-200 mb-24 max-w-3xl mx-auto leading-relaxed font-medium"
+        >
           Transformez vos ambitions en réalité avec des solutions IA sur mesure,
           des formations expertes et une accompagnement personnalisé.
-        </p>
+        </motion.p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -81,7 +103,7 @@ const Hero = () => {
             <div className="text-gray-300 font-medium">Support technique</div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

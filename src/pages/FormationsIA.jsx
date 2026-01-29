@@ -409,23 +409,17 @@ const FormationIA = () => {
       {/* Cartes des formations */}
       <section className="relative z-10 px-6 pb-20">
         <motion.div
-          variants={containerVariants}
-          initial="hidden"
           animate="visible"
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
         >
-          <AnimatePresence mode="wait">
-            {filteredFormations.map((formation, index) => {
+          {filteredFormations.map((formation, index) => {
               const Icon = formation.icon;
               
               return (
                 <motion.div
                   key={formation.id}
-                  variants={shouldReduceMotion ? {} : cardVariants}
                   layout={shouldReduceMotion ? false : true}
-                  initial={shouldReduceMotion ? "visible" : "hidden"}
                   animate="visible"
-                  exit={shouldReduceMotion ? "visible" : "hidden"}
                   whileHover={shouldReduceMotion ? {} : { 
                     y: -10,
                     rotateX: 5,
@@ -589,7 +583,6 @@ const FormationIA = () => {
                 </motion.div>
               );
             })}
-          </AnimatePresence>
         </motion.div>
       </section>
 

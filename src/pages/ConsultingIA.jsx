@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
   Shield, 
@@ -45,9 +46,19 @@ const ConsultingIA = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/20 to-slate-900"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, type: "spring" }}
+          className="max-w-7xl mx-auto relative z-10"
+        >
           {/* Floating Icons */}
-          <div className="flex justify-center space-x-6 mb-8 opacity-70">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 0.7, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex justify-center space-x-6 mb-8"
+          >
             <div className="animate-bounce hover:scale-110 transition-transform cursor-default">
               <Brain className="w-12 h-12 text-blue-400" />
             </div>
@@ -57,31 +68,52 @@ const ConsultingIA = () => {
             <div className="animate-bounce hover:scale-110 transition-transform cursor-default" style={{ animationDelay: '200ms' }}>
               <ShieldIcon className="w-12 h-12 text-indigo-400" />
             </div>
-          </div>
+          </motion.div>
 
           <div className="text-center mb-16">
-            <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-full font-bold text-lg inline-block mb-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-8 py-3 rounded-full font-bold text-lg inline-block mb-6"
+            >
               Expert Consulting IA
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-4xl md:text-5xl font-bold text-white mb-6"
+            >
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
                 Transformez votre entreprise grâce à l'IA
               </span>
               <br />
               <span className="text-white font-extrabold tracking-tight">opérationnelle</span>
-            </h1>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-medium">
-              De l'audit stratégique à l'industrialisation, boostez votre performance avec l'intelligence artificielle
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-3 bg-white text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 mt-8"
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed font-medium"
             >
-              Commencer votre transformation
-              <ArrowRight className="w-6 h-6" />
-            </Link>
+              De l'audit stratégique à l'industrialisation, boostez votre performance avec l'intelligence artificielle
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-3 bg-white text-blue-900 px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 mt-8"
+              >
+                Commencer votre transformation
+                <ArrowRight className="w-6 h-6" />
+              </Link>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Problems & Costs Section */}
