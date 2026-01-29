@@ -6,9 +6,15 @@ import Footer from '../components/Footer';
 const Accueil = () => {
   return (
     <>
-      <Hero />
-      <Services />
-      <Footer />
+      <section aria-labelledby="hero-title">
+        <Hero />
+      </section>
+      <section aria-labelledby="services-title">
+        <Services />
+      </section>
+      <footer role="contentinfo">
+        <Footer />
+      </footer>
     </>
   );
 };

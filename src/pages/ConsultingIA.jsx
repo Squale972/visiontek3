@@ -23,9 +23,12 @@ const ConsultingIA = () => {
           </div>
 
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-black text-white mb-8 leading-tight">
-              Transformez votre entreprise grâce à l'
-              <span className="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent"> IA opérationnelle</span>
+            <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight">
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+              Transformez votre entreprise
+               </span>
+              <br />
+                 <span className="text-white"> Avec l'IA opérationnelle</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed font-medium">
               Automatisez, optimisez, accélérez — sans complexité technique.<br/>

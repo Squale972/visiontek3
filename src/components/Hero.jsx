@@ -11,7 +11,7 @@ const scrollToServices = () => {
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-32">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-32" aria-labelledby="hero-title">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
@@ -34,7 +34,7 @@ const Hero = () => {
         </div>
 
         {/* Main Heading - Typographie audacieuse */}
-        <h1 className="text-6xl md:text-7xl font-black text-white mb-8 leading-tight">
+        <h1 id="hero-title" className="text-6xl md:text-7xl font-black text-white mb-8 leading-tight">
           <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">
             L'Intelligence Artificielle
           </span>

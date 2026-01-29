@@ -7,18 +7,27 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm z-50 border-b border-slate-800">
+    <>
+      {/* Skip Navigation Link - Accessibilité WCAG AA */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-[60] focus:outline-none focus:ring-2 focus:ring-blue-400"
+      >
+        Aller au contenu principal
+      </a>
+      
+      <header className="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm z-50 border-b border-slate-800" role="banner">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
             <div className="flex items-center">
-              <img src="/logo-dark.jpg" alt="Visiontek" className="h-16 w-auto" />
+              <img src="/logo-dark.jpg" alt="Visiontek - Expert IA et Consulting" className="h-16 w-auto" />
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-8" role="navigation" aria-label="Menu principal">
             <Link 
               to="/" 
               className={`transition-colors ${
@@ -78,10 +87,18 @@ const Header = () => {
 
           {/* Desktop Contact */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="mailto:contact@visiontek.com" className="text-gray-300 hover:text-white transition-colors">
+            <a 
+              href="mailto:contact@visiontek.com" 
+              className="text-gray-300 hover:text-white transition-colors"
+              aria-label="Envoyer un email à contact@visiontek.com"
+            >
               <Mail className="w-4 h-4" />
             </a>
-            <a href="tel:+33600000000" className="text-gray-300 hover:text-white transition-colors">
+            <a 
+              href="tel:+33600000000" 
+              className="text-gray-300 hover:text-white transition-colors"
+              aria-label="Appeler le +33 6 00 00 00 00"
+            >
               <Phone className="w-4 h-4" />
             </a>
           </div>
@@ -90,7 +107,9 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-white p-2"
+              className="text-gray-300 hover:text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+              aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -100,7 +119,7 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800 rounded-lg mt-2">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800 rounded-lg mt-2" role="navigation" aria-label="Menu mobile">
               <Link 
                 to="/" 
                 className={`block px-3 py-2 transition-colors ${
@@ -184,6 +203,7 @@ const Header = () => {
         )}
       </div>
     </header>
+    </>
   );
 };
 

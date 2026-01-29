@@ -79,11 +79,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
+    <section id="contact" className="py-24 lg:py-32 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900" aria-labelledby="contact-title">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header - Hiérarchie renforcée */}
         <div className="text-center mb-24">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 id="contact-title" className="text-3xl md:text-4xl font-bold text-white mb-6">
             Démarrons votre <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Projet IA</span>
           </h2>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto font-semibold leading-relaxed">
@@ -107,10 +107,11 @@ const Contact = () => {
               >
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-2">
                       Nom complet *
                     </label>
                     <input
+                      id="name"
                       type="text"
                       name="name"
                       required
@@ -118,13 +119,15 @@ const Contact = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
                       placeholder="Jean Dupont"
+                      aria-required="true"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-200 mb-2">
                       Email *
                     </label>
                     <input
+                      id="email"
                       type="email"
                       name="email"
                       required
@@ -132,15 +135,17 @@ const Contact = () => {
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all"
                       placeholder="jean@entreprise.com"
+                      aria-required="true"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-200 mb-2">
                     Entreprise
                   </label>
                   <input
+                    id="company"
                     type="text"
                     name="company"
                     value={formData.company}
@@ -151,10 +156,11 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="service" className="block text-sm font-medium text-gray-200 mb-2">
                     Service intéressé
                   </label>
                   <select
+                    id="service"
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
@@ -169,10 +175,11 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2">
                     Message *
                   </label>
                   <textarea
+                    id="message"
                     name="message"
                     required
                     rows="5"
@@ -180,18 +187,21 @@ const Contact = () => {
                     onChange={handleChange}
                     className="w-full px-4 py-3 bg-slate-900/50 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 transition-all resize-none"
                     placeholder="Décrivez votre projet..."
+                    aria-required="true"
                   ></textarea>
                 </div>
 
                 {/* Consentement RGPD */}
                 <div>
-                  <label className="flex items-start space-x-2 text-gray-300 cursor-pointer">
+                  <label htmlFor="consent_rgpd" className="flex items-start space-x-2 text-gray-200 cursor-pointer">
                     <input
+                      id="consent_rgpd"
                       type="checkbox"
                       name="consent_rgpd"
                       checked={formData.consent_rgpd}
                       onChange={(e) => setFormData({...formData, consent_rgpd: e.target.checked})}
                       className="mt-1 w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500"
+                      aria-required="true"
                       required
                     />
                     <span className="text-sm">
@@ -203,7 +213,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-lg font-semibold hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 rounded-lg font-semibold hover:shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-purple-500/50"
                 >
                   {isSubmitting ? (
                     <>

@@ -104,7 +104,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 lg:py-32 bg-slate-900">
+    <section id="services" className="py-24 lg:py-32 bg-slate-900" aria-labelledby="services-title">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header - Hiérarchie renforcée */}
         <div className="text-center mb-28">
@@ -121,7 +121,7 @@ const Services = () => {
             </div>
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 id="services-title" className="text-3xl md:text-4xl font-bold text-white mb-6">
             Nos <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">Services</span>
           </h2>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto font-semibold leading-relaxed">
@@ -151,12 +151,12 @@ const Services = () => {
 
               {/* Content */}
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-300 transition-colors">{service.title}</h3>
-              <p className="text-gray-300 mb-6 text-base leading-relaxed">{service.description}</p>
+              <p className="text-gray-200 mb-6 text-base leading-relaxed">{service.description}</p>
 
               {/* Features */}
               <ul className="space-y-2 mb-6">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-gray-300 group-hover:text-white transition-colors">
+                  <li key={featureIndex} className="flex items-center text-gray-200 group-hover:text-white transition-colors">
                     <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3 group-hover:scale-150 transition-transform"></div>
                     <span className="text-sm">{feature}</span>
                   </li>
@@ -184,7 +184,8 @@ const Services = () => {
                     service.title === "Créateur Web" ? "/createur-web" :
                     "/formations"
                   }
-                  className={`inline-flex items-center bg-gradient-to-r ${service.color} text-white px-6 py-3 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-300`}
+                  className={`inline-flex items-center bg-gradient-to-r ${service.color} text-white px-6 py-3 rounded-full font-medium hover:shadow-lg hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50`}
+                  aria-label={`En savoir plus sur ${service.title}`}
                 >
                   <span>En savoir plus</span>
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -209,7 +210,7 @@ const Services = () => {
                   {benefit.icon}
                 </div>
                 <p className="text-white font-semibold mb-2">{benefit.text}</p>
-                <p className="text-gray-400 text-sm">{benefit.description}</p>
+                <p className="text-gray-300 text-sm">{benefit.description}</p>
               </div>
             ))}
           </div>

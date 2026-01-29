@@ -26,13 +26,15 @@ function App() {
       <ScrollToTop />
       <div className="min-h-screen bg-slate-900">
         <Header />
-        <Routes>
-          <Route path="/" element={<Accueil />} />
-          <Route path="/formations" element={<Formations />} />
-          <Route path="/consulting-ia" element={<ConsultingIA />} />
-          <Route path="/createur-web" element={<CreateurWeb />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <main id="main-content" role="main">
+          <Routes>
+            <Route path="/" element={<Accueil />} />
+            <Route path="/formations" element={<Formations />} />
+            <Route path="/consulting-ia" element={<ConsultingIA />} />
+            <Route path="/createur-web" element={<CreateurWeb />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );

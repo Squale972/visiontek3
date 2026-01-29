@@ -1,0 +1,57 @@
+/* Gestion des préférences de mouvement réduites - WCAG AA */
+@media (prefers-reduced-motion: reduce) {
+  /* Désactiver toutes les animations */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Désactiver les animations spécifiques */
+  .animate-pulse,
+  .animate-bounce,
+  .animate-spin,
+  .hover\:scale-105:hover,
+  .hover\:scale-110:hover,
+  .hover\:scale-150:hover,
+  .group-hover\:scale-110:hover,
+  .group-hover\:scale-150:hover {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Maintenir les effets hover statiques pour accessibilité */
+  .hover\:shadow-lg:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .hover\:shadow-2xl:hover {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  }
+}
+
+/* Optimisation mobile pour les animations */
+@media (max-width: 768px) {
+  /* Réduire les animations sur mobile pour performance */
+  .animate-pulse {
+    animation-duration: 3s !important;
+  }
+  
+  .animate-bounce {
+    animation-duration: 2s !important;
+  }
+
+  /* Réduire transformations coûteuses */
+  .hover\:scale-105:hover,
+  .hover\:scale-110:hover {
+    transform: none;
+  }
+  
+  /* Maintenir transitions simples */
+  .transition-colors {
+    transition: color 0.2s ease;
+  }
+}

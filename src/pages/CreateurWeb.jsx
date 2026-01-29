@@ -94,11 +94,11 @@ const CreateurWeb = () => {
           {/* Main Heading */}
           <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight">
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-              Ne développez pas juste un site.
+              Bien plus qu'un site Web,
             </span>
             <br />
             <span className="text-white">
-              Concevez l'intelligence qui pilote votre croissance.
+              l'IA qui pilote votre croissance
             </span>
           </h1>
 
